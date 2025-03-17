@@ -19,7 +19,7 @@ model = load_model()
 tokenizer = load_tokenizer()
 
 # Function to predict the next three words with probabilities
-def predict_next_words(text,top_n=20):
+def predict_next_words(text,top_n=10):
     MAX_SEQUENCE_LEN = 5  # Ensure this matches training
     token_list = tokenizer.texts_to_sequences([text])[0]
     token_list = pad_sequences([token_list], maxlen=MAX_SEQUENCE_LEN, padding='pre')
